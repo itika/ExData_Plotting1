@@ -26,7 +26,7 @@ datetime<-strptime(datetime,"%Y-%m-%d %H:%M:%S")
 
 #add this as a coumn to the data set
 d<-cbind(d,datetime)
-
+png(file = "plot41.png",width = 480,height = 480)
 par(mfrow = c(2, 2))
 
 #plotting the graph, with type = l
@@ -46,8 +46,6 @@ legend("topright",legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3")
 plot(d$datetime,d$Global_reactive_power,type = 'l',xlab = "datetime",ylab = "Global_reactive_power")
 
 
-#copy to png
-dev.copy(png, file = "plot4.png")
 
 #change the device back
 dev.off()
